@@ -1,0 +1,153 @@
+// ==UserScript==
+// @name         Bot
+// @namespace    http://tampermonkey.net/
+// @version      2024-11-15
+// @description  try to take over the world!
+// @author       You
+// @match        https://www.chess.com/play/computer*
+// @match       https://www.chess.com/play/*
+// @match       https://www.chess.com/game/*
+// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+    let interval,show_opponent=false,power=12
+    const script = document.createElement('script');
+    script.setAttribute('crossorigin', 'anonymous');
+    script.setAttribute('src', 'https://code.jquery.com/jquery-3.7.1.js');
+    script.setAttribute('integrity', 'sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=');
+    script.setAttribute('crossorigin', 'anonymous');
+ document.body.appendChild(script);
+    script.onload = () => {
+        console.log('jQuery loaded!');
+        $(document).ready(function() {
+            const get_number = (elm) =>{
+             const data = ['a','b','c','d','e','f','g','h']
+             return data.indexOf(elm)+1
+
+
+            }
+
+            const create_elm = (num)=>{
+                const elm = document.createElement('div')
+             elm.setAttribute('class',`highlight square-${num} myhigh`)
+             const jelm = $(elm).css({'border':'4px solid yellow','background':'transparent','shadow':'0 0 10px rgba(3, 201, 169,0.8)'})
+             $('#board-play-computer').append(jelm)
+             $('#board-single').append(jelm)
+
+
+
+                
+            }
+          
+            const create_div = (str1) =>{
+                const a = get_number(str1[0])
+                const b = get_number(str1[2])
+                create_elm(a+str1[1])
+                create_elm(b+str1[3])
+             
+
+            }
+
+
+
+
+
+             function get_hint()
+
+            {
+            
+                    
+              
+               
+
+                const board = $('chess-board')[0] || $('wc-chess-board')[0];
+interval = setInterval(async()=>{
+const len = $('.myhigh').length
+    if(!$('.myhigh').length){console.log($('.myhigh').length,'that')}else{console.log(len,'shit')}
+                if(board.game.getTurn() ===  board.game.getPlayingAs())
+                {
+                   
+                if(!len){
+                const fen = board.game.getFEN()
+              
+
+                const data = await fetch(`https://stockfish.online/api/s/v2.php?depth=${power}&fen=${fen}`)
+       
+               
+                const response = await data.json()
+                const continuation = response.continuation.split(" ")
+
+                console.log(continuation)
+                       
+
+                  create_div(continuation[0])
+                        
+                }
+               }
+               else{
+                            $('.myhigh').remove()
+
+               }
+},500)
+
+
+               
+            }
+
+
+            
+
+
+
+
+            const main_div = $('#board-layout-main')
+                main_div.append(`
+                <div style = 'flex:column;gap:10px;background-color:black;height:400px;padding:20px 50px'>
+                <p style = 'text-align:center;letter-spacing:1px;font-size:20px;color:white'>KrypBot</p>
+                <div>
+                <span style='color:yellow'>Get Hints:</span>
+                <input  id='get_hint' type = 'checkbox'> <br>
+                <span style='color:yellow'>Show opponent Moves:</span>
+                <input id='show_opponent_move' type = 'checkbox'>
+                </div> <br>
+                  <select  name="select" id="heromode">
+    <option value="12">3200</option>
+    <option value="13">Mitten-mode</option>
+    <option value="14">StockFish 13</option>
+    <option value="18">Undefeated</option>
+  </select>
+                </div>
+                `)
+
+                      $('#heromode').on('change', function() {
+  power = Number.parseInt(this.value)
+                          console.log(this.value)
+});
+
+            const hint_elm = $('#get_hint')
+        
+            hint_elm.on('click',function(){
+            if(this.checked)
+            {
+             get_hint()
+
+
+            }
+                else{
+                   clearInterval(interval)
+                    $('.myhigh').remove()
+                   
+
+                   
+                }
+            })
+
+
+        });
+    };
+
+
+})();

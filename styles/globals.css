@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#home_container{
+  background-image: url('https://4kwallpapers.com/images/wallpapers/batman-dc-superheroes-dc-comics-black-background-amoled-3840x2160-5952.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  
+  height: 100vh;
+}
+
+.games_card{
+  box-shadow:0 0 10px rgba(255,255,255,0.5)
+}
+.card_text{
+  font-family: 'Oswald';
+  letter-spacing: 1px;
+}
+.label_text{
+  font-family: 'Barlow';
+}
+.download_button{
+  padding: 10px 20px;
+  height: auto ;
+  width: auto;
+  color:#fff;
+  font-family: 'Roboto';
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.8);
+  
+  
+
+}
+.download_button:hover{
+  box-shadow: 0 0 20px rgba(255,255,255,0.9);
+
+}
+
+.best_label_system{
+  font-family: 'Lato';
+  letter-spacing: 1px;
+}

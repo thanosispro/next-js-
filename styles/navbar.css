@@ -1,0 +1,48 @@
+
+#navbar li,#sidebar li{
+    list-style: none;
+    position: relative;
+        color:white;
+        cursor: pointer;
+    font-family: 'lexend';
+    }
+    .logout{
+        font-family: 'lexend';
+    }
+    #navbar li:hover,#sidebar li:hover{
+        color:rgb(0, 234, 255);
+    }
+    .logout:hover{
+        color:rgb(0, 234, 255);
+
+    }
+
+#gamesz{
+    font-family: 'Lexend';
+}
+#login_label{
+    font-family: 'Poppins';
+}
+#best_button{
+    box-shadow: 0 0px 10px rgba(255, 255, 255, 0.8) ;
+    
+}
+#best_button:hover{
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+#new_horizon{
+    font-family: 'Inconsolata';
+    letter-spacing: 1px;
+}
+
+@keyframes rotate_inf{
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
