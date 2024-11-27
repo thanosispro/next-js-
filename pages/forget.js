@@ -41,7 +41,7 @@ const Forget = (props) => {
       <div className="h-screen w-full lg:w-1/2 md:w-1/2 bg-black">
         <div className="mx-auto flex h-full w-2/3 flex-col justify-center text-white xl:w-1/2">
           
-        <p className='text-pink-500 italic'>Let's Reset your password using Email</p>
+        <p className='text-pink-500 italic'>Lets Reset your password using Email</p>
           
           <div className="mt-10">
             <form onSubmit={reset_password}>

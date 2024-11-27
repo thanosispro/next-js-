@@ -56,7 +56,7 @@ const About = () => {
                             <p className="font-heading ml-16 text-lg leading-6 font-bold text-gray-200">Everything for free
                             </p>
                         </dt>
-                        <dd className="mt-2 ml-16 text-base text-gray-500"> Now you don't have to pay any money on finding game scripts and mods..
+                        <dd className="mt-2 ml-16 text-base text-gray-500"> Now you dont have to pay any money on finding game scripts and mods..
                         </dd>
                     </div>
                     <div className="relative">

@@ -36,7 +36,7 @@ const Reset_password = (props) => {
           <div className="h-screen w-full lg:w-1/2 md:w-1/2 bg-black">
             <div className="mx-auto flex h-full w-2/3 flex-col justify-center text-white xl:w-1/2">
               
-            <p className='text-pink-500 italic'>Let's Change Your password</p>
+            <p className='text-pink-500 italic'>Lets Change Your password</p>
               
               <div className="mt-10">
                 <form onSubmit={changePassword}>
