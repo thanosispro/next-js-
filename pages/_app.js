@@ -92,7 +92,7 @@ export default function App({ Component, pageProps }) {
       progress={progress}
       onLoaderFinished={() => setProgress(0)}
     />
-    <GoogleOAuthProvider clientId={process.env.GOOGLE_CLIENT_ID}>
+    <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}>
 
       <Navbar User={User} />
       <ToastContainer />

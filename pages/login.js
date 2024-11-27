@@ -17,16 +17,16 @@ const Login = (props) => {
     'fontFamily': 'Zilla Slab'
   }
   // login from google
-  console.log(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID)
+
   const googleLoginHandle = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
       console.log('Success:', tokenResponse);
       try {
         const code = tokenResponse.code
 
-        const client_id = process.env.GOOGLE_CLIENT_ID
+        const client_id = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
 
-        const client_secret = process.env.GOOGLE_CLIENT_SECRET;
+        const client_secret = process.env.NEXT_PUBLIC_API_KEY;
         const redirect_uri = 'http://localhost:3000';
         const grant_type = 'authorization_code';
         const data = await fetch(`https://oauth2.googleapis.com/token`, {
