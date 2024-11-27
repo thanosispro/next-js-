@@ -67,7 +67,7 @@ export default function Page() {
 
       </p>
       
-      <p className="mb-8 leading-relaxed my-2">{mainData.description}</p>
+      <p className="mb-8 leading-relaxed my-2">{mainData.description.replace(/'/g, '&apos;')}</p>
       <p className=' text-slate-200 text-2xl' style={style_cat}>Category: {mainData.category}</p>
       <div className="flex justify-center my-2">
        

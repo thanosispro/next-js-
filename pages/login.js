@@ -128,7 +128,7 @@ const Login = (props) => {
               </div>
               <div className='flex flex-col gap-4'>
               <label for="remember" className="mx-2 text-sm">Forgot Your Password? <Link href={'/forget'} className='text-cyan-400'>Reset Password</Link></label>
-              <label for="remember" className="mx-2 text-md">Don't have account??? <Link href={'/signup'} className='text-cyan-400'>Signup</Link></label></div>
+              <label for="remember" className="mx-2 text-md">Dont have account??? <Link href={'/signup'} className='text-cyan-400'>Signup</Link></label></div>
               <div className="my-5">
               
               
