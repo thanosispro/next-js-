@@ -17,7 +17,7 @@ const Login = (props) => {
     'fontFamily': 'Zilla Slab'
   }
   // login from google
-
+  console.log(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID)
   const googleLoginHandle = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
       console.log('Success:', tokenResponse);

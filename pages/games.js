@@ -159,7 +159,7 @@ export async function getServerSideProps(context) {
   let page
   if(is_page){page=is_page}else{page=1}
   if(!query){query = ''}
-  const data = await  fetch(`http://127.0.0.1:8000/api/get_games/?page=${page}&query=${query}`)
+  const data = await  fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/get_games/?page=${page}&query=${query}`)
   console.log(is_page,page)
   const response = await data.json()
   return {
